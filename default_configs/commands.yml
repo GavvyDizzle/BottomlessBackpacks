@@ -1,0 +1,14 @@
+commandDisplayName:
+  admin: backpackadmin
+helpCommandPadding:
+  admin: '&6-----(BottomlessBackpacks Admin Commands)-----'
+descriptions:
+  admin:
+    clear: Clear all items from a backpack
+    confirm: Confirm an action
+    help: Opens this help menu
+    open: Open a player's backpack
+    pages: Edit the number of pages of a backpack
+    reload: Reloads this plugin or a specified portion
+    reset: Resets a backpack
+    resetAllData: Resets all backpacks

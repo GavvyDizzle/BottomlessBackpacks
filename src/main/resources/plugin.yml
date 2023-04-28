@@ -1,0 +1,17 @@
+name: BottomlessBackpacks
+version: '${project.version}'
+main: com.github.gavvydizzle.bottomlessbackpacks.BottomlessBackpacks
+api-version: 1.19
+depend: [ServerUtils]
+authors: [GavvyDizzle]
+commands:
+  backpack:
+    aliases: [bp]
+    description: Open your backpack
+    permission: bottomlessbackpacks.backpack
+    permission-message: Insufficient permission
+  backpackadmin:
+    aliases: [bpa]
+    description: Admin backpack commands
+    permission: bottomlessbackpacks.backpackadmin
+    permission-message: Insufficient permission

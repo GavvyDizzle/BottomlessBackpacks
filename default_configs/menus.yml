@@ -1,0 +1,42 @@
+backpack:
+  name: Backpack
+  adminName: '{name}''s Backpack'
+  filler: GRAY
+  pageAmounts:
+    low: 5
+    high: 20
+  rowSlots:
+    pageInfo: 4
+    pageDown: 3
+    pageUp: 5
+    savingToggle: 0
+  items:
+    pageInfo:
+      material: OAK_SIGN
+      name: '&ePage: {curr}/{max}'
+    pageDown:
+      material: PAPER
+      name: '&ePage Down'
+      lore:
+      - '&7Left          &c-1'
+      - '&7Shift-left   &c-5'
+      - '&7Right         &c-20'
+      - '&7Shift-right  &cPage 1'
+    pageUp:
+      material: PAPER
+      name: '&ePage Up'
+      lore:
+      - '&7Left          &a+1'
+      - '&7Shift-left   &a+5'
+      - '&7Right         &a+20'
+      - '&7Shift-right  &aMax'
+    savingOn:
+      material: LIME_STAINED_GLASS_PANE
+      name: '&aPage Saving Active'
+      lore:
+      - '&7Click to toggle'
+    savingOff:
+      material: 0.3
+      name: '&cPage Saving Inactive'
+      lore:
+      - '&7Click to toggle'
