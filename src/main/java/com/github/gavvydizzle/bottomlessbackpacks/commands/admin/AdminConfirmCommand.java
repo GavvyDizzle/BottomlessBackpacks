@@ -1,6 +1,5 @@
 package com.github.gavvydizzle.bottomlessbackpacks.commands.admin;
 
-import com.github.gavvydizzle.bottomlessbackpacks.BottomlessBackpacks;
 import com.github.gavvydizzle.bottomlessbackpacks.commands.AdminCommandManager;
 import com.github.gavvydizzle.bottomlessbackpacks.commands.CommandConfirmationManager;
 import com.github.mittenmc.serverutils.SubCommand;

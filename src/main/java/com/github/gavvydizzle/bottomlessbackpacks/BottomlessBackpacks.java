@@ -26,7 +26,6 @@ public final class BottomlessBackpacks extends JavaPlugin {
     private CommandConfirmationManager commandConfirmationManager;
 
     private DataSource dataSource;
-    private PlayerData data;
     private boolean mySQLSuccessful;
 
     @Override
@@ -59,7 +58,7 @@ public final class BottomlessBackpacks extends JavaPlugin {
         }
 
         instance = this;
-        data = new PlayerData(this, dataSource);
+        PlayerData data = new PlayerData(this, dataSource);
 
         backpackManager = new BackpackManager(instance, data);
         getServer().getPluginManager().registerEvents(backpackManager, this);

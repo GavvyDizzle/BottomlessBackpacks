@@ -2,7 +2,6 @@ package com.github.gavvydizzle.bottomlessbackpacks.commands;
 
 import com.github.gavvydizzle.bottomlessbackpacks.backpack.BackpackManager;
 import com.github.gavvydizzle.bottomlessbackpacks.utils.Messages;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;

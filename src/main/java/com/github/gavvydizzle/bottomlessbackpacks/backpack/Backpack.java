@@ -118,24 +118,6 @@ public class Backpack {
     }
 
     /**
-     * Updates the number of pages this backpack has
-     * @param amount The amount to change the pages by
-     */
-    public void incrementMaxPage(int amount) {
-        if (amount == 0) return;
-
-        Bukkit.getServer().getScheduler().runTaskAsynchronously(BottomlessBackpacks.getInstance(), () -> {
-            int newMaxPage = Numbers.constrain(maxPage + amount, 1, MAX_PAGE_AMOUNT);
-            if (BottomlessBackpacks.getInstance().getBackpackManager().getData().updatePages(uuid, newMaxPage)) {
-                maxPage = newMaxPage;
-                updateArraySize();
-
-                BottomlessBackpacks.getInstance().getBackpackManager().getBackpackInventory().handleBackpackPageChange(this);
-            }
-        });
-    }
-
-    /**
      * Toggles if this backpack will save the page it was on when it is closed.
      */
     public void onSavePageToggle() {

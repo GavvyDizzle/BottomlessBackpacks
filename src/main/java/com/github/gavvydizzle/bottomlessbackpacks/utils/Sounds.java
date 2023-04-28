@@ -78,7 +78,7 @@ public class Sounds {
      * @param loc The location to play the sound.
      */
     public void playSound(Location loc) {
-        if (loc.getWorld() != null) loc.getWorld().playSound(loc, sound, volume, pitch);
+        if (loc.getWorld() != null && isEnabled) loc.getWorld().playSound(loc, sound, volume, pitch);
     }
 
     /**
@@ -86,6 +86,6 @@ public class Sounds {
      * @param p The player to play the sound for.
      */
     public void playSound(Player p) {
-        p.playSound(p.getLocation(), sound, volume, pitch);
+        if (isEnabled) p.playSound(p.getLocation(), sound, volume, pitch);
     }
 }
