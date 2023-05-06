@@ -58,7 +58,13 @@ public class BackpackManager implements Listener {
 
     @EventHandler
     private void onPlayerQuit(PlayerQuitEvent e) {
-        backpacks.remove(e.getPlayer().getUniqueId());
+       Backpack backpack = backpacks.remove(e.getPlayer().getUniqueId());
+       if (backpack == null) return;
+
+       // If any admins are still looking at the backpack, move it to the offline map
+       if (!backpack.getBackpackViewers().isEmpty()) {
+           offlineBackpacks.put(backpack.getUuid(), backpack);
+       }
     }
 
     @EventHandler
