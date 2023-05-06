@@ -221,18 +221,23 @@ public class BackpackInventory {
         Player player = (Player) e.getWhoClicked();
         Inventory topInv = e.getView().getTopInventory();
 
-        // Cancel clicks to the menu bar
-        if (e.getClickedInventory() == topInv && e.getSlot() >= Backpack.ITEMS_PER_PAGE) {
-            e.setCancelled(true);
-        }
-
         if (adminsInInventory.containsKey(player.getUniqueId())) {
+            // Cancel clicks to the menu bar
+            if (e.getClickedInventory() == topInv && e.getSlot() >= Backpack.ITEMS_PER_PAGE) {
+                e.setCancelled(true);
+            }
+
             handleAdminClick(e, player);
             return;
         }
 
         if (!playersInInventory.containsKey(player.getUniqueId())) {
             return;
+        }
+
+        // Cancel clicks to the menu bar
+        if (e.getClickedInventory() == topInv && e.getSlot() >= Backpack.ITEMS_PER_PAGE) {
+            e.setCancelled(true);
         }
 
         Backpack backpack = playersInInventory.get(player.getUniqueId());
