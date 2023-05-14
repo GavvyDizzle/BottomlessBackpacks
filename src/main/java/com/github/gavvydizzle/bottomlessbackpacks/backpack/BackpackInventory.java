@@ -270,8 +270,8 @@ public class BackpackInventory {
 
                     onPageChange(player, topInv, backpack, page, backpack.getCurrentPage());
                     backpack.getBackpackViewers().updatePage(player.getUniqueId(), backpack.getCurrentPage());
-                    e.getView().getTopInventory().setItem(pageInfoSlot, getPageItem(backpack.getCurrentPage(), maxPage));
-                    Sounds.generalClickSound.playSound(player);
+                    topInv.setItem(pageInfoSlot, getPageItem(backpack.getCurrentPage(), maxPage));
+                    Sounds.pageTurnSound.playSound(player);
                 }
                 else {
                     Sounds.generalFailSound.playSound(player);
@@ -298,8 +298,8 @@ public class BackpackInventory {
 
                     onPageChange(player, topInv, backpack, page, backpack.getCurrentPage());
                     backpack.getBackpackViewers().updatePage(player.getUniqueId(), backpack.getCurrentPage());
-                    e.getView().getTopInventory().setItem(pageInfoSlot, getPageItem(backpack.getCurrentPage(), maxPage));
-                    Sounds.generalClickSound.playSound(player);
+                    topInv.setItem(pageInfoSlot, getPageItem(backpack.getCurrentPage(), maxPage));
+                    Sounds.pageTurnSound.playSound(player);
                 }
                 else {
                     Sounds.generalFailSound.playSound(player);
