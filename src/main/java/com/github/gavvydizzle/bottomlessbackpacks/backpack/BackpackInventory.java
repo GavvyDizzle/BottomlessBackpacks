@@ -142,6 +142,12 @@ public class BackpackInventory {
         Backpack backpack = backpackManager.getBackpack(player);
         if (backpack == null) return;
 
+        // Since backpack saving relies on the inventory close event, it is possible to bypass it some instances (mods/clients)
+        // This check ensures that the backpack saves itself if the player has closed the backpack without sending an inventory close packet
+        if (playersInInventory.containsKey(player.getUniqueId())) {
+            player.closeInventory();
+        }
+
         int openPage = page >= 1 ? page : backpack.getCurrentPage();
         openPage = Numbers.constrain(openPage, 1, backpack.getMaxPage());
         backpack.setCurrentPage(openPage);
