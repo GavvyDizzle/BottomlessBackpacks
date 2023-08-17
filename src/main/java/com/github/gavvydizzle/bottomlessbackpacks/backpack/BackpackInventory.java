@@ -198,13 +198,11 @@ public class BackpackInventory {
     public void closeInventory(Player player) {
         Backpack backpack = null;
         int page = 0;
-        boolean shouldSavePage = false;
         boolean isAdmin = false;
 
         if (playersInInventory.containsKey(player.getUniqueId())) {
             backpack = playersInInventory.remove(player.getUniqueId());
             page = backpack.getCurrentPage();
-            shouldSavePage = true;
         }
         else if (adminsInInventory.containsKey(player.getUniqueId())) {
             AdminViewer adminViewer = adminsInInventory.remove(player.getUniqueId());
@@ -215,7 +213,7 @@ public class BackpackInventory {
 
         if (backpack != null && page >= 1) {
             onPageChange(player, player.getOpenInventory().getTopInventory(), backpack, page, -1);
-            backpack.onInventoryClose(shouldSavePage);
+            backpack.onInventoryClose(!isAdmin);
             backpack.getBackpackViewers().removeViewer(player.getUniqueId());
             if (isAdmin) {
                 backpackManager.onAdminCloseBackpack(backpack);

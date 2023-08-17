@@ -130,10 +130,10 @@ public class Backpack {
     /**
      * Should be called when the backpack's inventory gets closed.
      * This will push any outstanding updates to the database
-     * @param shouldSavePage If the backpack should save the page (saving must be active for this backpack too)
+     * @param isOwnerClosing If the owner closed the backpack. This will attempt to update the current page.
      */
-    public void onInventoryClose(boolean shouldSavePage) {
-        if (!(shouldSavePage && savePageOnClose)) {
+    public void onInventoryClose(boolean isOwnerClosing) {
+        if (isOwnerClosing && !savePageOnClose) {
             currentPage = 1;
         }
 
